@@ -8,43 +8,12 @@ gsap.defaults({
 });
 
 const read = {
-	percentGoBack: 2.5,
-	betOnNFL: 2.2, 
-	njasb: 2,
-	losingBy: 2.5
+	t1: 2,
+	t2: 2.4, 
+	t3: 3
 }
 
 const {w, h} = bannerSize
-
-function logoFader(){
-	const tl = new TimelineMax()
-	tl.to(".logo1", {duration:.2, opacity:0}, "+=.5")
-	return tl
-}
-
-function bgFadeOut(read){
-	const tl = new TimelineMax()
-	tl.to([ ".bg", ".t1"], {duration:.2, opacity:0}, `+=${read}`)
-	return tl
-}
-
-function fader(el, time){
-	const tl = new TimelineMax()
-	tl.from(el, {duration:.3, opacity:0}, "+=.2")
-	tl.to(el, {duration:.3, opacity:0}, `+=${time}`)
-	return tl
-}
-
-function ender(){
-	const tl = new TimelineMax()
-	tl.add("dumb")
-	tl.from([".logo3"], {duration:.3, opacity:0}, "dumb")
-	tl.add(olg(), "dumb")
-	tl.from([".t3"], {duration:.3, opacity:0})
-	tl.from([".footer", ".cta"], {duration:.3, opacity:0}, "+=.5")
-	
-	return tl	
-}
 
 
 function init(){	
@@ -54,43 +23,37 @@ function init(){
 		}
 	}})
 	tl.set(".frame1", {opacity:1})
-	if(window.universalBanner.name==="hockey"){
-		
-		document.getElementById("legalContent").innerHTML = "Terms and conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG.  Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. © NHL 2022.  All Rights Reserved."
-	}else if(window.universalBanner.name==="baseball"){
-		document.getElementById("legalContent").innerHTML =  "Terms and conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG.  Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. Major League Baseball trademarks and copyrights are used with permission of Major League Baseball. Visit MLB.com"
-	}else if(window.universalBanner.name==="basketball"){
-		// document.getElementById("legalContent").innerHTML =  "Terms and conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG.  Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. The NBA and individual NBA member team identifications are the intellectual property of NBA Properties, Inc. and the respective NBA member teams. (c) 2022 NBA Properties, Inc. All rights reserved."
-		document.getElementById("legalContent").innerHTML =  "Terms and Conditions apply.  Individuals must be 19 years of age or older to participate in online sports betting made available by OLG. Must be a resident of Ontario located in the province at the time of registration, where applicable, and play. The NBA and individual NBA member team identifications are the intellectual property of NBA Properties, Inc. and the respective NBA member teams. © 2023 NBA Properties, Inc. All rights reserved."
-	}
+
 	return tl
 }
 
-
-
-
-function slider(read=2){	
-	const tl = new TimelineMax()
-	tl.add(logoFader())
-
-	tl.add("t1")
-	tl.from(".t1a", {duration:.26, x:"-=130", y:"+=30", opacity:0}, "t1")
-	tl.from(".t1b", {duration:.26, x:"+=130", y:"-=30", opacity:0}, "t1+=.6")
-	
-	tl.add(bgFadeOut(read))
-	return tl
+function textOn(){
+	return {duration:.3, x:-30, y:10, opacity:0}
 }
+
 
 function standard(){	
 	const tl = init()	
-	tl.add(slider(), "+=.5")
-	tl.from(".logo2", {duration:.3, opacity:0}, "+=.1")
-	tl.from(".t2", {duration:.3, opacity:0}, "+=.3")
-	tl.to(".text2", {duration:.2, opacity:0}, `+=${read.njasb}`)
-	if(document.querySelector(".t2b")){
-		tl.add(fader(".t2b", read.betOnNFL))	
-	}
-	tl.add(ender())
+	
+	tl.add("playa")
+	tl.from(".playa img", {duration:.5, x:-42, y:40, ease:Power4.easeOut}, "playa")
+	tl.from(".ball", {duration:.5, x:50, y:-50, ease:Power4.easeOut}, "playa")
+	tl.from(".t1", {...textOn()}, "playa+=.2")
+
+	tl.to(".t1", {duration:.2, opacity:0}, `+=${read.t1}`)
+
+	tl.from(".t2", {...textOn()}, "+=.1")
+	tl.from(".bubble-1", {duration:.2, opacity:0}, "+=.2")
+	tl.from(".bubble-2", {duration:.2, opacity:0})
+	tl.from(".bubble-3", {duration:.2, opacity:0})
+	tl.to(".t2", {duration:.2, opacity:0}, `+=${read.t2}`)
+	tl.from(".t3", {...textOn()})
+	tl.to([".t3", ".bubble"], {duration:.2, opacity:0}, `+=${read.t3}`)
+	tl.from(".tint", {duration:.35, ease:Power4.easeOut, y:-h, opacity:0})
+	tl.from([".end-logos", ".end-legal"], {duration:.3, opacity:0}, "+=.2")
+	tl.from(".end-cta", {duration:.3, opacity:0}, "+=.3")
+
+	tl.add(olg())
 	return tl
 }
 
@@ -115,50 +78,13 @@ function b_1000x700(){
 }
 
 function b_970x70(){
-
-const tl = new TimelineMax()
-tl.add("t1")
-tl.from(".t1a", {duration:.11, y:"-=50"}, "t1")
-	b_728x90(tl)
-}
-
-function b_320x50(){
-	const tl = init()
-	// const tl = new TimelineMax()
-	tl.add(logoFader())
-	tl.add("t1")
-	tl.from(".t1a", {duration:.2,  x:"-=180"}, "t1")
-	tl.from(".t1b", {duration:.2,  x:"+=220"}, "t1")
-
-	tl.to([ ".bg", ".t1"], {duration:.2, opacity:0}, `+=2`)
-	tl.from(".t2", {duration:.2, opacity:0})	
-	tl.to(".t2", {duration:.2, opacity:0}, "+=2.2")	
-		
-	// tl.from(".logo3", {duration:.2, opacity:0})	
-	// tl.from(".cta", {duration:.2, opacity:0})	
-	tl.add(ender())
-	// b_728x90(tl)
+	standard()
+	
 }
 
 function b_728x90(text1){
 	
-	const tl = init()
-	if(text1){
-		tl.add(logoFader())
-		tl.add(text1, "+=.5")
-		tl.add(bgFadeOut(2))
-	}else{
-		tl.add(slider(), "+=.5")	
-	}
-	
-
-
-	tl.add(fader(".text2", read.percentGoBack))
-	// if(document.querySelector(".t2b")){
-	// 	tl.add(fader(".t2b", read.betOnNFL))	
-	// }
-	
-	tl.add(ender())
+	standard()
 }
 
-export { init, b_160x600, b_300x250, b_300x600, b_320x50, b_728x90, b_970x250, b_1000x700,b_970x70, origin, standard, read, slider, ender, logoFader, bgFadeOut }
+export { init, standard, b_300x250}
