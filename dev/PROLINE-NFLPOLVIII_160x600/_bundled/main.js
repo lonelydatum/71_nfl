@@ -22,12 +22,17 @@ function standard() {
 	tl.to(".t2", { duration: .2, opacity: 0 }, "+=" + _commonJsCommonJs.read.t2);
 	tl.from(".t3", _extends({}, (0, _commonJsCommonJs.textOn)()));
 	tl.to([".t3", ".bubble", ".bet"], { duration: .2, opacity: 0 }, "+=" + _commonJsCommonJs.read.t3);
-	// tl.from(".tint", {duration:.35, ease:Power4.easeOut, y:-h, opacity:0})
+
+	tl.to([".playa", ".phone"], { duration: .5, y: "-=10" });
+
+	tl.add("tint");
+	// tl.to(".proline-small", {duration:.2, opacity:0}, `tint`)
+	tl.from(".tint", { duration: .35, ease: Power4.easeOut, y: -_commonJsCommonJs.h, opacity: 0 }, "tint");
 	tl.from([".end-logos", ".end-legal"], { duration: .3, opacity: 0 }, "+=.2");
 
 	tl.add("end");
-	tl.to([".playa", ".phone"], { duration: .5, y: "-=10" }, "end");
-	tl.to(".proline-small", { duration: .5, y: "-=39" }, "end");
+
+	// tl.to(".proline-small", {duration:.5, y:"-=39"}, "end")
 	tl.from(".end-cta", { duration: .3, opacity: 0 }, "end");
 
 	tl.add((0, _commonJsCommonJs.olg)());
