@@ -23,7 +23,9 @@ function standard() {
 	tl.from(".t3", _extends({}, (0, _commonJsCommonJs.textOn)()));
 	tl.to([".t3", ".bubble", ".bet"], { duration: .2, opacity: 0 }, "+=" + _commonJsCommonJs.read.t3);
 
-	tl.to([".playa", ".phone"], { duration: .5, y: "-=10" });
+	tl.add("shift");
+	tl.to([".playa", ".phone"], { duration: .5, y: "-=10" }, "shift");
+	tl.to(".proline-small", { duration: .5, y: "-=39" }, "shift");
 
 	tl.add("tint");
 	// tl.to(".proline-small", {duration:.2, opacity:0}, `tint`)
@@ -32,7 +34,6 @@ function standard() {
 
 	tl.add("end");
 
-	// tl.to(".proline-small", {duration:.5, y:"-=39"}, "end")
 	tl.from(".end-cta", { duration: .3, opacity: 0 }, "end");
 
 	tl.add((0, _commonJsCommonJs.olg)());
