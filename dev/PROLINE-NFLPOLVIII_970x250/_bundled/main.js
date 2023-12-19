@@ -110,6 +110,11 @@ function b_728x90(text1) {
 exports.init = init;
 exports.standard = standard;
 exports.b_300x250 = b_300x250;
+exports.olg = _proline.olg;
+exports.read = read;
+exports.textOn = textOn;
+exports.w = w;
+exports.h = h;
 
 },{"./helpers/helpers.js":3,"./proline":4}],3:[function(require,module,exports){
 "use strict";

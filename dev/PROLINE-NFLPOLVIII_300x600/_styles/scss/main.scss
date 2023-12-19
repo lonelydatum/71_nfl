@@ -1,4 +1,4 @@
-@import '../../../_common/styles/common.scss';
+@import '../../../_common/styles/b300x600.scss';
 #banner{
 	width: 300px;
 	height: 600px;
@@ -6,19 +6,36 @@
 
 
 
-#olg{
-	width: 129px;
-	height: 89px;
-	@include pos(0, 526);
-	// opacity: .5 !important;
-	;
+.playa{
+	clip-path: polygon(102px 280px, 135px 360px, 300px 360px, 300px 0px, 0px 0px );
+	@include pos(0, 0);
+	width: 300px;
+	height: 600px;
+	img{
+		@include pos-scale(0, 0, .5);
+	}
+}
+
+.ball{
+	@include pos-scale(0, 0, .5);
+}
+
+.phone{
+	@include pos-scale(0, 0, .5);
+}
+
+
+.proline-small{
+	@include pos-scale(0, 0, .5);
 }
 
 
 
 
-#legalBtn{	
-	@include pos(206, 551);	
-	width: 92px;
-	// opacity: 1;
+.tint{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .8;
+	@include pos(0, 0);
 }

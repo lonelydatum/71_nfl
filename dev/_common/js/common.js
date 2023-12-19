@@ -87,4 +87,4 @@ function b_728x90(text1){
 	standard()
 }
 
-export { init, standard, b_300x250}
+export { init, standard, b_300x250, olg, read, textOn, w, h}
