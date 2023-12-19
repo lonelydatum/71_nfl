@@ -30,8 +30,8 @@ function standard() {
 
 	tl.add("tint");
 	tl.to(".proline-small", { duration: .2, opacity: 0 }, "tint");
-
 	tl.from(".tint", { duration: .5, ease: Power4.easeOut, y: -_commonJsCommonJs.h, opacity: 0 }, "tint");
+
 	tl.from([".end-logos"], { duration: .3, opacity: 0 }, "+=.2");
 
 	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.2");
@@ -105,7 +105,11 @@ function standard() {
 	tl.to(".t2", { duration: .2, opacity: 0 }, "+=" + read.t2);
 	tl.from(".t3", _extends({}, textOn()));
 	tl.to([".t3", ".bubble"], { duration: .2, opacity: 0 }, "+=" + read.t3);
-	tl.from(".tint", { duration: .35, ease: Power4.easeOut, y: -h, opacity: 0 });
+
+	tl.add("tint");
+	tl.to(".proline-small", { duration: .2, opacity: 0 }, "tint");
+	tl.from(".tint", { duration: .35, ease: Power4.easeOut, y: -h, opacity: 0 }, "tint");
+
 	tl.from([".end-logos"], { duration: .3, opacity: 0 }, "+=.2");
 	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.2");
 	tl.add("final");
