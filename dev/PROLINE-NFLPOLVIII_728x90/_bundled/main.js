@@ -32,14 +32,18 @@ function standard() {
 	tl.to(".t2", { duration: .2, opacity: 0 }, "+=" + _commonJsCommonJs.read.t2);
 	tl.from(".t3", _extends({}, textOn()));
 	tl.to([".t3", ".bubble", ".bet"], { duration: .2, opacity: 0 }, "+=" + _commonJsCommonJs.read.t3);
-	tl.from(".tint", { duration: .2, ease: Power4.easeOut, y: -_commonJsCommonJs.h, opacity: 0 });
-	tl.from([".end-logos", ".end-legal"], { duration: .3, opacity: 0 }, "+=.2");
 
-	tl.add("end");
+	tl.add("tint");
+	tl.to(".proline-small", { duration: .2, opacity: 0 }, "tint");
 
-	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.3");
+	tl.from(".tint", { duration: .2, ease: Power4.easeOut, y: -_commonJsCommonJs.h, opacity: 0 }, "tint");
+	tl.from([".end-logos"], { duration: .3, opacity: 0 }, "+=.2");
 
-	tl.add((0, _commonJsCommonJs.olg)());
+	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.2");
+	tl.add("final");
+	tl.from(".end-legal", { duration: .3, opacity: 0 }, "final+=.2");
+	tl.add((0, _commonJsCommonJs.olg)(), "final");
+
 	return tl;
 }
 
@@ -107,10 +111,11 @@ function standard() {
 	tl.from(".t3", _extends({}, textOn()));
 	tl.to([".t3", ".bubble"], { duration: .2, opacity: 0 }, "+=" + read.t3);
 	tl.from(".tint", { duration: .35, ease: Power4.easeOut, y: -h, opacity: 0 });
-	tl.from([".end-logos", ".end-legal"], { duration: .3, opacity: 0 }, "+=.2");
-	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.3");
-
-	tl.add((0, _proline.olg)());
+	tl.from([".end-logos"], { duration: .3, opacity: 0 }, "+=.2");
+	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.2");
+	tl.add("final");
+	tl.from(".end-legal", { duration: .3, opacity: 0 }, "final+=.2");
+	tl.add((0, _proline.olg)(), "final");
 	return tl;
 }
 

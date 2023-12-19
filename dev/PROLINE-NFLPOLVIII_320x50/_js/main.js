@@ -21,8 +21,10 @@ function standard(){
 	tl.from(".el-4-txt", {duration:.3, opacity:0})
 	tl.to(".el-4-txt", {duration:.3, opacity:0}, `+=${ read.t2}`)
 
-	tl.from(".el-5", {duration:.3, opacity:0})
-	tl.to(".el-5", {duration:.3, opacity:0}, "+=1")
+	tl.from(".bubble-1", {duration:.3, opacity:0})
+	tl.from(".bubble-2", {duration:.3, opacity:0})
+	tl.from(".bubble-3", {duration:.3, opacity:0})
+	tl.to(".bubble", {duration:.3, opacity:0}, "+=1.3")
 
 
 	tl.from(".el-6", {duration:.3, opacity:0})
