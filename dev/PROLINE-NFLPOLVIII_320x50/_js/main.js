@@ -1,7 +1,40 @@
-import {b_320x50} from '../../_common/js/common.js'
+import {init, olg, textOn, read} from '../../_common/js/common.js'
 
 
 
-b_320x50()
+
+function standard(){	
+	const tl = init()	
+	
+	
+	
+	
+	tl.from(".el-1", {duration:.3, opacity:0})
+	tl.to(".el-1", {duration:.3, opacity:0}, "+=1")
+
+	tl.from(".el-2", {duration:.3, opacity:0})
+	tl.to(".el-2", {duration:.3, opacity:0}, "+=1")
+
+	tl.from(".el-3-txt", {duration:.3, opacity:0})
+	tl.to(".el-3-txt", {duration:.3, opacity:0}, `+=${ read.t1}`)
+
+	tl.from(".el-4-txt", {duration:.3, opacity:0})
+	tl.to(".el-4-txt", {duration:.3, opacity:0}, `+=${ read.t2}`)
+
+	tl.from(".el-5", {duration:.3, opacity:0})
+	tl.to(".el-5", {duration:.3, opacity:0}, "+=1")
 
 
+	tl.from(".el-6", {duration:.3, opacity:0})
+	tl.to(".el-6", {duration:.3, opacity:0}, `+=${ read.t3}`)
+
+	tl.from(".el-7", {duration:.3, opacity:0})
+
+	tl.from(".el-8-cta", {duration:.3, opacity:0})
+	
+
+	tl.add(olg())
+	return tl
+}
+
+standard()

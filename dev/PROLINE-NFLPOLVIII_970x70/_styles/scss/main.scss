@@ -1,0 +1,52 @@
+@import '../../../_common/styles/common.scss';
+
+
+#banner{
+ width: 970px;
+ height: 70px; 
+}
+
+
+#olg{
+	
+	width: 117px;
+	height: 69px;
+	@include pos(-2, 26);
+	
+}
+
+
+
+
+#legalBtn{	
+	@include pos(820, 50);	
+	width: 140px;
+	height: 50px;
+	// opacity: 1 !important;
+}
+
+
+
+.playa{
+	clip-path: polygon(398px 162px, 450px 250px, 650px 250px, 650px 0px, 0px 0px );
+	@include pos(0, -9);
+	width: 970px;
+	height: 70px;
+	img{
+		@include pos-scale(0, 0, .5);
+	}
+}
+
+.ball{
+	@include pos-scale(0, -13, .5);
+}
+
+
+
+.tint{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .8;
+	@include pos(0, 0);
+}
