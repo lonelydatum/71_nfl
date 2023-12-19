@@ -8,7 +8,7 @@ function standard(){
 	
 	
 	tl.add("playa")
-	tl.from(".playa img", {duration:1, x:-80, y:80, ease:Power3.easeOut}, "playa")
+	tl.from(".playa img", {duration:.5, x:-80, y:80, ease:Power3.easeOut}, "playa")
 	tl.from(".ball", {duration:.5, x:"+=100", y:"-=50", ease:Power3.easeOut}, "playa")
 
 	// tl.to([".bet", ".phone", ".ball", ".playa"], {x:0, duration:1.2}, "playa")
