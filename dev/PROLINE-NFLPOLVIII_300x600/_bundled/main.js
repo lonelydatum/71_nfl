@@ -28,7 +28,10 @@ function standard() {
 	tl.to([".playa"], { duration: .2, scale: 1.1, x: -25, y: -1 }, "scale");
 	tl.to([".ball"], { duration: .2, scale: .55, x: -38, y: -30 }, "scale");
 
-	tl.from(".tint", { duration: .5, ease: Power4.easeOut, y: -_commonJsCommonJs.h, opacity: 0 });
+	tl.add("tint");
+	tl.to(".proline-small", { duration: .2, opacity: 0 }, "tint");
+
+	tl.from(".tint", { duration: .5, ease: Power4.easeOut, y: -_commonJsCommonJs.h, opacity: 0 }, "tint");
 	tl.from([".end-logos"], { duration: .3, opacity: 0 }, "+=.2");
 
 	tl.from(".end-cta", { duration: .3, opacity: 0 }, "+=.2");
@@ -36,7 +39,6 @@ function standard() {
 	tl.from(".end-legal", { duration: .3, opacity: 0 }, "final+=.2");
 	tl.add((0, _commonJsCommonJs.olg)(), "final");
 
-	tl.add((0, _commonJsCommonJs.olg)());
 	return tl;
 }
 
